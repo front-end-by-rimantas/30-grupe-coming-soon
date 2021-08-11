@@ -1,0 +1,16 @@
+{
+  "name": "7-coming-soon",
+  "version": "1.0.0",
+  "description": "Demo Coming soon project for students",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["html", "css", "js"],
+  "author": "Rimantas Belovas",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

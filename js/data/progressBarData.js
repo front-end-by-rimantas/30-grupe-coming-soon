@@ -2,10 +2,33 @@ const progressBarData = [
     {
         label: 'UX Design',
         value: 90,
+        hack: true,
     },
     {
         label: 'UX Design',
+        value: 90,
+    },
+    'ertdyfh',
+    ['ewre', 452],
+    true,
+    null,
+    false,
+    () => { },
+    {
+        label: 'UX Design',
         value: -90,
+    },
+    {
+        label: 'UX Design',
+        value: Infinity,
+    },
+    {
+        label: 'UX Design',
+        value: -Infinity,
+    },
+    {
+        label: 'UX Design',
+        value: NaN,
     },
     {
         label: 'UX Design',

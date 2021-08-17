@@ -10,8 +10,12 @@ class ProgressBars {
 
     init() {
         if (!this.isValidSelector() ||
-            !this.isValidData() ||
-            !this.findTargetElement()) {
+            !this.isValidData()) {
+            return false;
+        }
+
+        if (!this.findTargetElement()) {
+            console.error('ERROR: pagal pateikta this.selector nepavyko rasti norimo elemento');
             return false;
         }
 
@@ -40,13 +44,7 @@ class ProgressBars {
 
     findTargetElement() {
         this.DOM = document.querySelector(this.selector);
-
-        if (!this.DOM) {
-            console.error('ERROR: pagal pateikta this.selector nepavyko rasti norimo elemento');
-            return false;
-        }
-
-        return true;
+        return !!this.DOM;
     }
 
     render() {

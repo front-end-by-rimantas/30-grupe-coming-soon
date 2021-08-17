@@ -3,7 +3,50 @@ class ProgressBars {
         this.selector = selector;
         this.data = data;
 
+        this.DOM = null;
+
+        this.init();
+    }
+
+    init() {
+        if (!this.isValidSelector() ||
+            !this.isValidData() ||
+            !this.findTargetElement()) {
+            return false;
+        }
+
         this.render();
+    }
+
+    isValidSelector() {
+        if (typeof this.selector !== 'string' ||
+            this.selector === '') {
+            console.error('ERROR: this.selector turi buti ne tuscias tekstas');
+            return false;
+        }
+
+        return true;
+    }
+
+    isValidData() {
+        if (!Array.isArray(this.data) ||
+            this.data.length === 0) {
+            console.error('ERROR: this.data turi buti ne tuscias array');
+            return false;
+        }
+
+        return true;
+    }
+
+    findTargetElement() {
+        this.DOM = document.querySelector(this.selector);
+
+        if (!this.DOM) {
+            console.error('ERROR: pagal pateikta this.selector nepavyko rasti norimo elemento');
+            return false;
+        }
+
+        return true;
     }
 
     render() {
@@ -22,8 +65,7 @@ class ProgressBars {
                     </div>`;
         }
 
-        const DOM = document.querySelector(this.selector);
-        DOM.innerHTML += HTML;
+        this.DOM.innerHTML += HTML;
     }
 }
 
